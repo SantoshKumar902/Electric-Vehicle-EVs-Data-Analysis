@@ -124,21 +124,25 @@ with col6:
 # Key Insights
 st.divider()
 st.subheader("🔍 Key Insights")
-col_a, col_b, col_c = st.columns(3)
 
-with col_a:
-    top_make = filtered_df['Make'].value_counts().idxmax()
-    top_make_pct = round(filtered_df['Make'].value_counts().max() / len(filtered_df) * 100, 1)
-    st.info(f"🏆 **{top_make}** dominates with **{top_make_pct}%** of all EVs")
+if len(filtered_df) == 0:
+    st.warning("⚠️ No data found for selected filters! Please change filters.")
+else:
+    col_a, col_b, col_c = st.columns(3)
 
-with col_b:
-    top_county = filtered_df['County'].value_counts().idxmax()
-    top_county_count = filtered_df['County'].value_counts().max()
-    st.success(f"📍 **{top_county} County** leads with **{top_county_count:,}** registrations")
+    with col_a:
+        top_make = filtered_df['Make'].value_counts().idxmax()
+        top_make_pct = round(filtered_df['Make'].value_counts().max() / len(filtered_df) * 100, 1)
+        st.info(f"🏆 **{top_make}** dominates with **{top_make_pct}%** of all EVs")
 
-with col_c:
-    bev_pct = round(filtered_df['Electric Vehicle Type'].str.contains('Battery').sum() / len(filtered_df) * 100, 1)
-    st.warning(f"🔋 **{bev_pct}%** of vehicles are fully electric **(BEV)**")
+    with col_b:
+        top_county = filtered_df['County'].value_counts().idxmax()
+        top_county_count = filtered_df['County'].value_counts().max()
+        st.success(f"📍 **{top_county} County** leads with **{top_county_count:,}** registrations")
+
+    with col_c:
+        bev_pct = round(filtered_df['Electric Vehicle Type'].str.contains('Battery').sum() / len(filtered_df) * 100, 1)
+        st.warning(f"🔋 **{bev_pct}%** of vehicles are fully electric **(BEV)**")
 
 st.divider()
 st.caption("Data Source: Washington State Department of Licensing | Built with Streamlit & Plotly")
