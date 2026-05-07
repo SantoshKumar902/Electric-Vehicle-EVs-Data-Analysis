@@ -1,59 +1,72 @@
-# Electric Vehicle (EVs) Data-Analysis
-## Project Objective
-This project analyzes electric vehicle (EV) registration data from Washington State to explore trends in EV adoption, performance, and pricing.
+# ⚡ Electric Vehicle (EV) Data Analysis Dashboard
 
-## Key Highlights:
+Interactive dashboard analyzing 247,000+ EV registrations across Washington State — deployed live with filters, charts and key insights!
 
-* Cleaned and explored 247K+ EV records
+🚀 **[Try the Live Dashboard](https://electric-vehicle-evs-data-analysis.streamlit.app)**
 
-* Visualized top models, counties, and year-wise adoption
+---
 
-* Built a linear regression model to predict electric range using MSRP, model year, and make/model
+## 🎯 Project Objective
+Analyze electric vehicle registration data from Washington State to explore trends in EV adoption, performance, and geographic distribution — and present findings through an interactive web dashboard.
 
-* Used Python (Pandas, Seaborn, Scikit-learn) in Google Colab
+---
 
-## Dataset used
-- <a href="https://drive.google.com/file/d/1-rmtaxZ058aHY-Yn6n09Tq2tbiXsxD8v/view?usp=sharing"> EVs data set</a>
+## 🛠️ Tech Stack
+- Python (Pandas, NumPy)
+- Data Visualization (Plotly, Seaborn, Matplotlib)
+- Streamlit (Live Deployment)
+- Google Colab (Analysis & EDA)
 
-# Questions (KPIs)
-## Data Cleaning Questions:
- - How many missing values exist in the dataset, and in which columns?
- - How should missing or zero values in the Base MSRP and Electric Range columns be handled?
- - Are there duplicate records in the dataset? If so, how should they be managed?
- - How can VINs be anonymized while maintaining uniqueness?
- - How can Vehicle Location (GPS coordinates) be cleaned or converted for better readability?
- ## Data Exploration Questions:
- - What are the top 5 most common EV makes and models in the dataset?
- - What is the distribution of EVs by county? Which county has the most registrations?
- - How has EV adoption changed over different model years?
- - What is the average electric range of EVs in the dataset?
- - What percentage of EVs are eligible for Clean Alternative Fuel Vehicle (CAFV) incentives?
- - How does the electric range vary across different makes and models?
- - What is the average Base MSRP for each EV model?
- - Are there any regional trends in EV adoption (e.g., urban vs. rural areas)?
-## Data Visualization Questions:
- - Create a bar chart showing the top 5 EV makes and models by count.
- - Use a heatmap or choropleth map to visualize EV distribution by county.
- - Create a line graph showing the trend of EV adoption by model year.
- - Generate a scatter plot comparing electric range vs. base MSRP to see pricing trends.
- - Plot a pie chart showing the proportion of CAFV-eligible vs. non-eligible EVs.
- - Use a geospatial map to display EV registrations based on vehicle location.
+---
 
-  # Analyzed Google Colab file ( Solved )
-  - <a href = "https://github.com/SantoshKumar902/Electric-Vehicle-EVs-Data-Analysis/blob/main/EV_Data_Analysis%20(Solution).ipynb">Solution of EVs Data</a>
-  # Conclusion
-  ## Based on the exploration and visualization of the dataset, several key findings emerged:
+## 🧾 Dataset
+- **Source:** Washington State Department of Licensing
+- **Records:** 247,000+ EV registrations
+- **Features:** Make, Model, County, City, Model Year, Electric Range, EV Type, CAFV Eligibility
 
-- Tesla dominates the EV market, with Model Y and Model 3 being the most registered vehicles.
+---
 
-- King County has the highest number of EV registrations, highlighting it as a key urban EV hub.
+## 📂 Project Structure
+```
+├── Google Colab Notebook/     — EDA & Analysis notebook
+├── app.py                     — Streamlit dashboard app
+├── EV_Data_Analysis.zip       — Compressed dataset
+└── requirements.txt           — Dependencies
+```
 
-- EV adoption has increased sharply post-2020, indicating growing interest and infrastructure support.
+---
 
-- The average electric range of vehicles is approximately 44.6 miles, with models like the Tesla Roadster and Jaguar I-PACE offering the highest range.
+## 📊 Dashboard Features
+- 🔍 **Interactive Filters** — Filter by Year, County, EV Type
+- 🏆 **Top 10 EV Manufacturers** — Bar chart
+- 📈 **Year-on-Year EV Growth** — Line chart
+- 📍 **Top 10 Counties** — Bar chart
+- 🔋 **BEV vs PHEV Distribution** — Pie chart
+- 🚘 **Top 5 EV Models** — Bar chart
+- ⚡ **Electric Range Distribution** — Histogram
+- 💡 **Key Insights** — Dynamic cards
 
-- Only 30% of vehicles are CAFV eligible, while over 60% have unknown eligibility, suggesting a need for better range reporting.
+---
 
-- Urban centers show a higher concentration of EVs, reinforcing the need for expanded rural infrastructure.
+## 🔍 Key Insights
+- **Tesla dominates** — Model Y and Model 3 are most registered vehicles
+- **King County** has the highest EV registrations — key urban EV hub
+- **EV adoption sharply increased post-2020** — growing infrastructure support
+- **Average electric range ~44.6 miles** — Tesla Roadster & Jaguar I-PACE highest
+- Only **30% vehicles are CAFV eligible** — 60%+ have unknown eligibility
+- **Urban centers** show higher EV concentration — rural infrastructure needed
 
-The analysis supports a deeper understanding of EV growth patterns and provides actionable insights for stakeholders in clean energy and transportation sectors.
+---
+
+## ▶️ Run Locally
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+---
+
+## 📩 Connect with Me
+- 📧 Email: santoshkumar729629@gmail.com
+- 💼 LinkedIn: [linkedin.com/in/santosh-kumar-sk](https://www.linkedin.com/in/santosh-kumar-sk)
+- 🐙 GitHub: [github.com/SantoshKumar902](https://github.com/SantoshKumar902)
