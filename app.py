@@ -12,7 +12,7 @@ st.write("Washington State EV Registration Data — Interactive Dashboard")
 def load_data():
     df = pd.read_csv("EV_Data_Analysis.zip")
     df = df.drop_duplicates()
-    df = df.dropna(subset=['County', 'City', 'Make', 'Model'])
+    df = df.dropna(subset=['Country', 'City', 'Make', 'Model'])
     return df
 
 df = load_data()
@@ -22,7 +22,7 @@ st.divider()
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("🚗 Total EVs", f"{len(df):,}")
 col2.metric("🏭 Unique Makes", df['Make'].nunique())
-col3.metric("📍 Counties", df['County'].nunique())
+col3.metric("📍 Countries", df['County'].nunique())
 col4.metric("📅 Year Range", f"{int(df['Model Year'].min())} - {int(df['Model Year'].max())}")
 st.divider()
 
