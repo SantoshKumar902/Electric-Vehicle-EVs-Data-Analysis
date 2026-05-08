@@ -12,7 +12,7 @@ st.write("Washington State EV Registration Data — Interactive Dashboard")
 def load_data():
     df = pd.read_csv("EV_Data_Analysis.zip")
     df = df.drop_duplicates()
-    df = df.dropna(subset=['Country', 'City', 'Make', 'Model'])
+    df = df.dropna(subset=['County', 'City', 'Make', 'Model'])
     return df
 
 df = load_data()
